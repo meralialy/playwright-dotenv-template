@@ -1,0 +1,35 @@
+{
+  "name": "playwright-dotenv-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.9.0"
+  },
+  "scripts": {
+    "prepare": "husky install && playwright install",
+    "create:env": "cp .env.example .env",
+    "clean": "rm -rf node_modules && yarn",
+    "precommit": "yarn prettier:fix && yarn lint:fix && yarn test",
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "lint": "eslint .",
+    "lint:fix": "eslint .",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.30.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.34.0",
+    "eslint-plugin-playwright": "^0.12.0",
+    "husky": "^8.0.3",
+    "playwright": "^1.30.0",
+    "playwright-expect": "^0.1.2",
+    "prettier": "^2.8.4"
+  }
+}
